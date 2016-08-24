@@ -601,7 +601,7 @@ $ cd /lib/modules/`uname -r`/
 
 
 Exporting Variables
-~~~~~~~~~~~~~~~~~~~~
+--------------------------
 By default, the variables created within a script are available only to the subsequent steps of that script. 
 Any child processes (sub-shells) do not have automatic access to the values of these variables. 
 To make them available to child processes, they must be promoted to environment variables using the export statement as in:
@@ -612,7 +612,7 @@ $ VAR=value ; export VAR
 
 
 Script Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ ./script.sh 100 200
 
 $0 				(Script name)
@@ -623,14 +623,14 @@ $# 				(Number of arguments)
 
 
 Input Redirection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ free > /tmp/free.out
 $ cat /tmp/free.out
 $ wc -l < /tmp/free.out
 
 
 if statement
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ cat > condition.sh
 	#!/bin/bash
 	file=$1
@@ -644,7 +644,7 @@ $ chmod +x condition.sh
 $ bash condition.sh file1
 
 elif statement
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 #!/bin/bash
 echo "enter a number"
 read number
@@ -662,7 +662,7 @@ else
 fi
 
 File conditionals in Bash
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 if [ -f /etc/passwd ] ; then
     ACTION
 fi
@@ -682,7 +682,7 @@ $ man 1 test		(View all conditionals)
 
 
 Arithmetic functions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 $ let x=( 1 + 2 ); echo $x
 
@@ -693,7 +693,7 @@ Advanced Bash Scripting
 =================================================================================
 
 String manipulation
-~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 [[ string1 > string2 ]] 	Compares the sorting order of string1 and string2.
 [[ string1 == string2 ]] 	Compares the characters in string1 with the characters in string2.
 myLen1=${#string1} 			Saves the length of string1 in the variable myLen1.
@@ -704,7 +704,7 @@ $ domain=${name#*.}; echo $domain			(prints "jomit.net")
 
 
 case statement
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 #!/bin/bash
 echo "enter alphabet"
@@ -718,7 +718,7 @@ exit 0
 	
 
 for statement
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 #!/bin/bash
 sum=0
 for i in 1 2 3 4 5
@@ -729,7 +729,7 @@ echo "The sum of $i numbers is $sum"
 
 
 while statement
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 #!/bin/bash
 echo "enter number"
 read num
@@ -744,7 +744,7 @@ echo "The factorial for $num is $fact"
 
 
 Script Debugging
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ bash -x whiletest.sh
 
 set -x		(turns on debugging inside the bash script)
@@ -758,19 +758,19 @@ $ bash whiletest.sh 2> error.txt	(save stderr output in error.txt)
 
 
 Creating Temporary files and directories
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------
 TEMP=$(mktemp /tmp/tempfile.XXXXXXXX) 
 TEMPDIR=$(mktemp -d /tmp/tempdir.XXXXXXXX) 	
 
 
 Discarding Output with /dev/null
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------
 "/dev/null" file is also called the bit bucket or black hole.
 
 $ find / > /dev/null
 
 Random Numbers
-~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 Uses FIPS140 algorithm to generate random numbers (see http://en.wikipedia.org/wiki/FIPS_140-2)
 
 $ echo $RANDOM
@@ -792,33 +792,33 @@ Furthermore, when the entropy pool is empty, /dev/random is blocked and does not
 Processes and Process Attributes
 =========================================================================
 Interactive Processes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 	
+--------------------------	
 Need to be started by a user, either at a command line or through a graphical interface such as an icon or a menu selection. 	e.g. => bash, firefox, top
 
 Batch Processes 	
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 Automatic processes which are scheduled from and then disconnected from the terminal. These tasks are queued and work on a FIFO (First In, First Out) basis. 	
 e.g. =>  updatedb
 
 Daemons 	
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 Server processes that run continuously. Many are launched during system startup and then wait for a user or system request indicating that their service is required. 	
 e.g. =>  httpd, xinetd, sshd
 
 Threads 	
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 Lightweight processes. These are tasks that run under the umbrella of a main process, sharing memory and other resources, but are scheduled and run by the system on an individual basis. An individual thread can end without terminating the whole process and a process can create new threads at any time. Many non-trivial programs are multi-threaded. 	
 e.g. => gnome-terminal, firefox
 
 Kernel Threads 	
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 Kernel tasks that users neither start nor terminate and have little control over. These may perform actions like moving a thread from one CPU to another, or making sure input/output operations to disk are completed. 	
 e.g. => kswapd0, migration, ksoftirqd
 
 
 
 Process ID's and Priority
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 Process ID (PID)
 Parent Process ID (PPID)
 Thread ID (TID)
@@ -867,7 +867,7 @@ Use "bg" or "fg" to bring process to background or foreground
 
 
 Scheduling Future Processes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ at now + 2 days			(specificies that task needs to be performed after 2 days)
 at> cat file1				(actual task)
 at> CTRL + D				(end of task)
@@ -887,56 +887,3 @@ $ sleep 1000h	(hours)
 $ sleep 1000d	(days)
 
 ("sleep" and "at" are quite different; sleep delays execution for a specific period while at starts execution at a later time)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
