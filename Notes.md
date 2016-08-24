@@ -348,7 +348,7 @@ more details => https://help.ubuntu.com/community/Grub2/Passwords.
 Network Operations
 ===================================================================
 Fundamentals:
-~~~~~~~~~~~~~~~~~
+--------------------------
 Class A network 
 - can have up to 16.7 million unique hosts on its network. 
 - range of host address is from 1.0.0.0 to 127.255.255.255.
@@ -374,7 +374,7 @@ $ ifconfig		(or /sbin/ifconfig)
 
 
 Networking Configuration:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 Debian
 $ sudo cat /etc/network/interfaces
 $ sudo /etc/init.d/networking start
@@ -403,7 +403,7 @@ $ iptraf		(monitors network traffic in text mode)
 
 
 Graphical and Non Graphical Browsers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------
 Text based browsers
 - lynx
 - links or elinks
@@ -444,7 +444,7 @@ $ echo $USER
 $ echo "abcd"
 
 sed = stream editor
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 $ sed s/is/are test1			(Substitute first occurrence of "is" with "are" in a line)
 $ sed s/is/are/g test1			(Substitute all occurrences of "is" with "are" in a line)
@@ -455,7 +455,7 @@ $ sed -i s/is/are/g test1	(Save changes for string substitution in the same file
 
 
 awk = 	(last name of authors: Alfred "A"ho, Peter "W"einberger, and Brian "K"ernighan)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 Used for data extraction and reporting
 
 
@@ -466,7 +466,7 @@ $ awk -F: '{ print $1 $6 }' /etc/passwd		(print 1st and 6th field of every line)
 
 
 Utilities
-~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ sort test1
 $ cat test1 test2 | sort
 $ sort -r test1				(sort in reverse order)
@@ -518,14 +518,14 @@ $ zgrep -i less test-file.txt.gz 	(To search inside a compressed file)
 $ zdiff filename1.txt.gz filename2.txt.gz
 
 Regular expression/ Search Patterns
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 .(dot) 	(Match any single character)
 a|z 	(Match a or z)
 $ 		(Match end of string)
 * 		(Match preceding item 0 or more times)
 
 Example:  "the quick brown fox jumped over the lazy dog"
--------------------------------
+
 a.. 	matches azy
 b.|j. 	matches both br and ju
 ..$ 	matches og
@@ -562,13 +562,13 @@ $ ./ioscript.sh
 
 
 Return Values
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ ls /etc/passwd
 $ echo $?			("$?" shows return value)
 
 
 Long Commands in multiple lines:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ scp abc@server1.linux.com:\
 /var/ftp/pub/userdata/custdata/read \
 abc@server3.linux.co.in:\
@@ -576,14 +576,14 @@ abc@server3.linux.co.in:\
 
 
 Multiple Commands on a Single Line
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ make ; make install ; make clean			(will continue all commands even if one fails)
 $ make && make install && make clean		(if one command fails, subsequent commands will fail)
 $ cat file1 || cat file2 || cat file3		(continue until something succeeds, and then stop executing)
 
 
 Functions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ cat > funcfile.sh
 #!/bin/bash
 display(){
@@ -594,7 +594,7 @@ display "jomit"
 display "jim"
 
 Command Substitution
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 $ cd /lib/modules/$(uname -r)/
 $ cd /lib/modules/`uname -r`/
 
