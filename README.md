@@ -1,4 +1,4 @@
-# Notes from [Linux Foundation Course (LFS101)] (https://training.linuxfoundation.org/linux-courses/system-administration-training/introduction-to-linux)
+# Notes from [Linux Foundation Course LFS101](https://training.linuxfoundation.org/linux-courses/system-administration-training/introduction-to-linux)
 
 Documentation (Man pages, GNU Info System, and the help command)
 ================================================================
